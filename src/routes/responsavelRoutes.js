@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/responsavelController');
+const autenticar = require('../middlewares/authMiddleware');
 
-router.post('/', controller.criar);
-router.get('/', controller.listar);
+router.get('/', autenticar, controller.listar);
+router.post('/', autenticar, controller.criar);
 
 module.exports = router;

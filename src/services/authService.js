@@ -3,7 +3,7 @@ const pool = require('../db');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-console.log('JWT_SECRET no authService:', process.env.JWT_SECRET);
+// console.log('JWT_SECRET no authService:', process.env.JWT_SECRET);
 
 async function login(email, senha) {
   const result = await pool.query(

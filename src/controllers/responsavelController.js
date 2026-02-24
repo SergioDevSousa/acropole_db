@@ -11,7 +11,9 @@ async function criar(req, res) {
 
 async function listar(req, res) {
   try {
-    const dados = await responsavelService.listarResponsaveis();
+    const dados = await responsavelService.listarResponsaveis(
+      req.usuario.role
+    );
     res.json(dados);
   } catch (error) {
     res.status(500).json({ erro: error.message });
